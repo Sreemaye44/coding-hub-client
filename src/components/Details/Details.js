@@ -8,7 +8,7 @@ import { jsPDF } from "jspdf";
 
 const Details = () => {
     const details= useLoaderData();
-    const {name,duration, fee,instructor,intro, logo,students}=details
+    const {name,duration, fee,instructor,intro, logo,students,id}=details
     console.log(details);
 
     const downloadPdfDocument = () => {
@@ -25,14 +25,16 @@ const Details = () => {
 
     return (
         <Card  className="mx-auto my-5 d-flex" style={{ width: '30rem'}}>
-        <Card.Header className='d-flex justify-content-end'>
+        <Card.Header className='d-flex justify-content-between'>
+        <h5>{name}</h5>
+        <div>
         <Button id="testId" onClick={downloadPdfDocument} className='me-2' variant='outline-primary'><FaDownload></FaDownload></Button>
         <Button variant='outline-primary'><FaBookmark></FaBookmark></Button>
+        </div>
         
         </Card.Header>
         <Card.Img style={{height: '20rem'}} variant="top" src={logo} />
         <Card.Body id="divToPrint" >
-          <Card.Title  className='text-center'>{name}</Card.Title>
           <Card.Text>
           <div className='d-flex justify-content-between my-3'>
           <div><FaClock></FaClock> {duration} </div>
@@ -46,7 +48,7 @@ const Details = () => {
           <div className='d-flex justify-content-between'>
           </div>
         </Card.Body>
-        <Link to='/premium'><Button className="mx-3 mb-2" variant="primary">Get Premium Access</Button></Link>
+        <Link to={`/premium/${id}`}><Button  variant="primary">Get Premium Access</Button></Link>
       </Card>
     );
 };

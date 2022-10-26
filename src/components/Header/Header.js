@@ -42,7 +42,7 @@ const Header = () => {
             <>
             
              <Button onClick={handleLogOut} variant="warning" className='me-2' >LogOut</Button>
-             <Image style={{height: '40px'}} roundedCircle src={user.photoURL}></Image>
+             <Image style={{height: '40px'}} roundedCircle src={user.photoURL} data-toggle="tooltip" data-placement="top" title={user.displayName} ></Image>
             </>
              :
             <Link to='/login'> <Button variant="warning">Login</Button></Link>}

@@ -36,7 +36,7 @@ function App() {
         {
           path: '/details/:id',
           element: <Details></Details>,
-          loader :
+          loader : ({params})=>fetch(`http://localhost:5000/details/${params.id}`)
         }
 
       ]

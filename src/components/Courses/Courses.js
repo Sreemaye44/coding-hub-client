@@ -6,7 +6,6 @@ import Card from 'react-bootstrap/Card';
 
 const Courses = () => {
     const courses= useLoaderData();
-    console.log(courses)
 
     return (
         <div className='container d-flex mx-auto justify-content-between  mt-4 '>

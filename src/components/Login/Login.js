@@ -36,7 +36,7 @@ const Login = () => {
           GoogleProviderLogin(googleProvider)
           .then(result=>{
             const user=result.user;
-            console.log("login: "+user);
+            navigate(from, {replace: true});
          
           })
           .catch(error=>{
@@ -52,7 +52,7 @@ const Login = () => {
           GoogleProviderLogin(githubProvider)
           .then(result=>{
             const user=result.user;
-            console.log(user);
+            navigate(from, {replace: true});
          
           })
           .catch(error=>{

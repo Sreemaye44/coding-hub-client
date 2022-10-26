@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import { Button, Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
@@ -6,20 +7,27 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
+import Toggle from '../Toggle/Toggle';
+
 
 const Header = () => {
+  const [toggle,setToggle]= useState(false);
+  const handleToggleChange=()=>{
+    setToggle(!toggle);
+  }
   const {user,logOut}=useContext(AuthContext);
   const handleLogOut=()=>{
     logOut()
     .then(()=>{})
     .catch(error=>console.error(error))
   }
+  
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
       <Image style={{width: '30px', height: '25px'}} src='https://cdn.worldvectorlogo.com/logos/code-school.svg'></Image>
         <Navbar.Brand href="#home">CODING HUB</Navbar.Brand>
-        <button>toggle</button>
+        <Toggle toggle={toggle} handleToggleChange={handleToggleChange}></Toggle>
        
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

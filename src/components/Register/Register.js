@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
 
 const Register = () => {
-  const{createUser}=useContext(AuthContext);
+  const{createUser,updateUserProfile}=useContext(AuthContext);
   const [error,setError]=useState(" ");
   const handleSubmit=(event)=>
   {
@@ -23,7 +23,8 @@ const Register = () => {
          const user=result.user;
          setError('');
          form.reset();
-         console.log(user);
+         console.log(user)
+         handleUpdateUserProfile(name,photoURL);
     
     })
     .catch((error)=>{
@@ -32,6 +33,15 @@ const Register = () => {
     
     })
     
+  }
+  const handleUpdateUserProfile=(name,photoURL)=>{
+    const profile={
+      displayName: name,
+      photoURL: photoURL
+    }
+    updateUserProfile(profile)
+    .then(()=>{})
+    .catch(error=>console.error(error));
   }
     return (
         <div>

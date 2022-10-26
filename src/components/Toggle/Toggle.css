@@ -1,0 +1,38 @@
+.toggle-container{
+    position: relative;
+    width: 70px;
+    height: 32px;
+    background-color: #FFCA2C;
+    cursor:pointer;
+    user-select: none;
+    border-radius: 15px;
+    padding: 2px;
+    margin: 18px
+
+
+}
+.toggle-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 38px;
+    font-size: 14px;
+    line-height: 16px;
+    cursor: pointer;
+    color:black;
+    background-color: #ffff;
+    box-shadow: 0 2px 4px rgb(0,0,0,0.25);
+    padding: 8px 12px;
+    border-radius: 15px;
+    position: absolute;
+    transition: all 0.2s ease;
+    left: 34px;
+
+}
+
+.disable{
+    background-color: black;
+    color: white;
+    left: 2px;
+}

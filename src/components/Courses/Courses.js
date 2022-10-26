@@ -18,7 +18,7 @@ const Courses = () => {
            
                 {
                     courses.map(course=>
-                          <div className="col">
+                          <Link to={`/details/${course.id}`} className='text-decoration-none'><div className="col">
                           <div className="card">
                             <img src={course.logo} style={{height: '230px'}} className="card-img-top" alt="..."/>
                            <div className="card-body">
@@ -27,7 +27,7 @@ const Courses = () => {
                              <Button variant="outline-dark" className='mt-2'>See Details</Button>
                           </div>
                          </div>
-                        </div>
+                        </div></Link>
                        
                     )
                 }

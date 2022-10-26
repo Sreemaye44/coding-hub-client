@@ -1,23 +1,32 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { FaClock, FaUser, FaDollarSign, FaUsers } from 'react-icons/fa';
+import { FaClock, FaUser, FaDollarSign, FaUsers,FaDownload } from 'react-icons/fa';
 
 const Details = () => {
     const details= useLoaderData();
+    const {name,duration, fee,instructor,intro, logo,students}=details
     console.log(details);
     return (
-        <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={details.logo} />
+        <Card className="mx-auto my-5 d-flex" style={{ width: '30rem'}}>
+        <Card.Img style={{height: '20rem'}} variant="top" src={logo} />
         <Card.Body>
-          <Card.Title>{details.name}</Card.Title>
+          <Card.Title className='text-center'>{name}</Card.Title>
           <Card.Text>
-          <FaClock></FaClock> <FaUser></FaUser> <FaDollarSign></FaDollarSign> <FaUsers></FaUsers>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          <div className='d-flex justify-content-between m-3'>
+          <div><FaClock></FaClock> {duration} </div>
+          <div><FaUser></FaUser> {instructor} </div>
+         
+          <div><FaDollarSign></FaDollarSign>{fee}</div>
+          <div><FaUsers></FaUsers>{students}</div>
+          </div>
+           <p>{intro}</p>
           </Card.Text>
-          <Button variant="primary">Get Premium Access</Button>
+          <div className='d-flex justify-content-between'>
+          <Link to='/premium'><Button variant="primary">Get Premium Access</Button></Link>
+          <Button variant="primary">Download pdf <FaDownload></FaDownload></Button>
+          </div>
         </Card.Body>
       </Card>
     );

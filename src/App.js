@@ -7,6 +7,8 @@ import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import Courses from './components/Courses/Courses';
 import Details from './components/Details/Details';
+import PremiumAccess from './components/PremiumAccess/PremiumAccess';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 function App() {
   const route= createBrowserRouter([
@@ -37,6 +39,10 @@ function App() {
           path: '/details/:id',
           element: <Details></Details>,
           loader : ({params})=>fetch(`http://localhost:5000/details/${params.id}`)
+        },
+        {
+          path: '/premium',
+          element:<PrivateRoute><PremiumAccess></PremiumAccess></PrivateRoute>
         }
 
       ]

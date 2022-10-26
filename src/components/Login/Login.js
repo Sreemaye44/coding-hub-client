@@ -4,11 +4,14 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { FaGoogle,FaGithub } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
 
 const Login = () => {
   const {GoogleProviderLogin,logIn}=useContext(AuthContext);
+  const navigate=useNavigate();
+  const location=useLocation();
+  const from=location.state?.from?.pathname || '/';
   const googleProvider=new GoogleAuthProvider();
   const githubProvider=new GithubAuthProvider();
   const handleSubmit=event=>{
@@ -21,7 +24,7 @@ const Login = () => {
     .then(result=>{
         const user=result.user;
         form.reset();
-        console.log(user);
+        navigate(from, {replace: true});
     })
     .catch(error=>{
         console.error(error);

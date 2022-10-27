@@ -27,7 +27,7 @@ const Header = () => {
         <Navbar className='p-0' collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
       <Image style={{width: '30px', height: '25px'}} src='https://cdn.worldvectorlogo.com/logos/code-school.svg'></Image>
-        <Link  className="text-decoration-none text-secondary fs-2" to='/'>CODING HUB</Link>
+        <Link  className="text-decoration-none text-secondary fs-3" to='/'>CODING HUB</Link>
         <Toggle toggle={toggle} handleToggleChange={handleToggleChange}></Toggle>
        
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

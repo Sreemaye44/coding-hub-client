@@ -1,13 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Main from './layouts/Main';
-import Home from './components/Home/Home';
-import Register from './components/Register/Register';
-import Login from './components/Login/Login';
+import './App.css';
+import Blog from './components/Blog/Blog';
 import Courses from './components/Courses/Courses';
 import Details from './components/Details/Details';
+import FAQ from './components/FAQ/FAQ';
+import Home from './components/Home/Home';
+import Login from './components/Login/Login';
 import PremiumAccess from './components/PremiumAccess/PremiumAccess';
+import Register from './components/Register/Register';
+import Main from './layouts/Main';
+import NotFound from './NotFound/NotFound';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 function App() {
@@ -32,21 +34,33 @@ function App() {
         {
           path: '/course',
           element: <Courses></Courses>,
-          loader:(()=>fetch('http://localhost:5000/course'))
+          loader:(()=>fetch('https://coding-hub-server.vercel.app/course'))
 
         },
         {
           path: '/details/:id',
           element: <Details></Details>,
-          loader : ({params})=>fetch(`http://localhost:5000/details/${params.id}`)
+          loader : ({params})=>fetch(`https://coding-hub-server.vercel.app/details/${params.id}`)
         },
         {
           path: '/premium/:id',
           element:<PrivateRoute><PremiumAccess></PremiumAccess></PrivateRoute>,
-          loader: ({params})=>fetch(`http://localhost:5000/details/${params.id}`)
+          loader: ({params})=>fetch(`https://coding-hub-server.vercel.app/details/${params.id}`)
+        },
+        {
+          path: '/blog',
+          element: <Blog></Blog>
+        },
+        {
+          path: '/faq',
+          element: <FAQ></FAQ>
         }
 
       ]
+    },
+    {
+      path: '*',
+      element: <NotFound></NotFound>
     }
   ])
   return (

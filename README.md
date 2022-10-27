@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# CODING HUB
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CODING HUB is an educational course for the students who are interested in learning programming. The course provides different type of programming language knowledge
 
-## Available Scripts
+## [Live link](https://coding-hub-51f12.web.app/)
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+CODING HUB website provides you some paid course on programming languages. you can see the courses, their instructors, current students,  approximate course finishing time, some blogs in their website, After register or log in you can buy their course. you can login their website by you email address, google sign up or git hub profile.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Functionalities
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Login & Registration is available for the website
+* After choosing any course you can see the details on the course
+* Download Pdf of Course descripotion
+* pdf download of course introduction is available
+* Payment option is protected by private route, without login you can not access there 
+## Getting Started
 
-### `npm test`
+### Dependencies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* "bootstrap": "^5.2.2",
+* "firebase": "^9.12.1",
+* "html2canvas": "^1.4.1"
+* "jspdf": "^2.5.1",
+* "react": "^18.2.0"
+* e"react-bootstrap": "^2.5.0"
+* "react-icons": "^4.6.0"
+* "react-router-dom": "^6.4.2"
 
-### `npm run build`
+### Technologies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* JavaScript
+* React Router dom
+* Firebase
+* React-Bootstrap
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Pages
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Homepage
+* Courses
+* Login
+* Register
+* Blog
+* Details
+* 404 not found
+* premium access page
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Acknowledgments
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Inspiration, code snippets, etc.
+* [react-router-dom](https://reactrouter.com/en/main)
+* [Firebase](https://firebase.google.com/)
+* [React-icons](https://react-icons.github.io/react-icons/)
+* [React-bootstrap](https://react-bootstrap.github.io/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

@@ -6,8 +6,9 @@
     cursor:pointer;
     user-select: none;
     border-radius: 15px;
-    padding: 2px;
-    margin: 18px
+    margin-left: 15px;
+    margin-right: 15px;
+
 
 
 }
@@ -21,7 +22,7 @@
     line-height: 16px;
     cursor: pointer;
     color:black;
-    background-color: #ffff;
+    background-color:#F1F2F9;
     box-shadow: 0 2px 4px rgb(0,0,0,0.25);
     padding: 8px 12px;
     border-radius: 15px;

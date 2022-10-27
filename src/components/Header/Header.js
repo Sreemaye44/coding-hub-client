@@ -23,10 +23,10 @@ const Header = () => {
   }
   
     return (
-        <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+        <Navbar className='p-0' collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
       <Image style={{width: '30px', height: '25px'}} src='https://cdn.worldvectorlogo.com/logos/code-school.svg'></Image>
-        <Navbar.Brand href="#home">CODING HUB</Navbar.Brand>
+        <Link  className="text-decoration-none text-secondary fs-2" to='/'>CODING HUB</Link>
         <Toggle toggle={toggle} handleToggleChange={handleToggleChange}></Toggle>
        
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -42,7 +42,7 @@ const Header = () => {
             <>
             
              <Button onClick={handleLogOut} variant="warning" className='me-2' >LogOut</Button>
-             <Image style={{height: '40px'}} roundedCircle src={user.photoURL} data-toggle="tooltip" data-placement="top" title={user.displayName} ></Image>
+             <Image style={{height: '40px', width:'40px'}} roundedCircle src={user.photoURL} data-toggle="tooltip" data-placement="top" title={user.displayName} ></Image>
             </>
              :
             <Link to='/login'> <Button variant="warning">Login</Button></Link>}

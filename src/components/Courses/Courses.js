@@ -8,13 +8,13 @@ const Courses = () => {
     const courses= useLoaderData();
 
     return (
-        <div className='container d-flex mx-auto justify-content-between  mt-4 '>
-            <div className='w-25 h-50 bg-dark me-5 d-grid gap-2 p-2'>
+        <div className='container container-fluid d-lg-flex d-sm-block mx-auto justify-content-between mt-4 '>
+            <div className='h-50 ms-4 mb-3 d-grid gap-2'>
             {
-                courses.map(course=><Link to={`/details/${course.id}`}><Button className='m-2' variant="outline-warning" size="lg">{course.name}</Button></Link>)
+                courses.map(course=><Link to={`/details/${course.id}`}><Button className='m-2 w-75'  variant="outline-dark" size="lg">{course.name}</Button></Link>)
             }
             </div>
-            <div className='mt-1 w-75 bg-dark row row-cols-1 row-cols-md-3 g-4'>
+            <div className='m-1 w-100 mx-auto bg-secondary p-4 row  row-cols-md-3 row-cols-sm-6 g-4 border rounded'>
            
                 {
                     courses.map(course=>

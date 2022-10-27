@@ -24,7 +24,8 @@ const Details = () => {
     
 
     return (
-        <Card  className="mx-auto my-5 d-flex" style={{ width: '30rem'}}>
+        <div className='container container-fluid'>
+          <Card  className="mx-auto my-5 d-flex overflow-hidden" style={{ width: ''}}>
         <Card.Header className='d-flex justify-content-between'>
         <h5>{name}</h5>
         <div>
@@ -33,23 +34,26 @@ const Details = () => {
         </div>
         
         </Card.Header>
-        <Card.Img style={{height: '20rem'}} variant="top" src={logo} />
+       <div className='d-lg-flex d-sm-block'>
+       <Card.Img style={{height: '20rem'}} variant="top" src={logo} />
         <Card.Body id="divToPrint" >
           <Card.Text>
-          <div className='d-flex justify-content-between my-3'>
+          <div className='d-flex justify-content-between my-3 px-3'>
           <div><FaClock></FaClock> {duration} </div>
           <div><FaUser></FaUser> {instructor} </div>
          
           <div><FaDollarSign></FaDollarSign>{fee}</div>
           <div><FaUsers></FaUsers>{students}</div>
           </div>
-           <p>{intro}</p>
+           <p className='px-3'>{intro}</p>
           </Card.Text>
           <div className='d-flex justify-content-between'>
           </div>
         </Card.Body>
-        <Link to={`/premium/${id}`}><Button  variant="primary">Get Premium Access</Button></Link>
+       </div>
+        <Link to={`/premium/${id}`}><Button variant="primary">Get Premium Access</Button></Link>
       </Card>
+        </div>
     );
 };
 

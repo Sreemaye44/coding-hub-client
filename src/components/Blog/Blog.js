@@ -4,8 +4,8 @@ import CardGroup from 'react-bootstrap/CardGroup';
 
 const Blog = () => {
     return (
-        <CardGroup className='container'>
-      <Card className='me-3'>
+        <CardGroup className='container container-fluid'>
+      <Card className='me-3 '>
         <Card.Body>
           <Card.Title>What is cors?</Card.Title>
           <Card.Text>

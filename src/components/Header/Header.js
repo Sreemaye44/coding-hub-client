@@ -5,6 +5,7 @@ import { Button, Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
 import Toggle from '../Toggle/Toggle';
@@ -42,7 +43,7 @@ const Header = () => {
             <>
             
              <Button onClick={handleLogOut} variant="warning" className='me-2' >LogOut</Button>
-             <Image style={{height: '40px', width:'40px'}} roundedCircle src={user.photoURL} data-toggle="tooltip" data-placement="top" title={user.displayName} ></Image>
+             <Image style={{height: '40px', width:'40px'}} roundedCircle src={user?.photoURL} data-toggle="tooltip" data-placement="top" title={user?.displayName} ></Image>
             </>
              :
             <Link to='/login'> <Button variant="warning">Login</Button></Link>}

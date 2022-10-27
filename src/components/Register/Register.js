@@ -53,11 +53,11 @@ const Register = () => {
             <h4 className='text-center'>Sign Up Now!</h4>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Username</Form.Label>
-        <Form.Control type="text" name="name" placeholder="Enter email" />
+        <Form.Control type="text" name="name" placeholder="Enter username" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>PhotoURL</Form.Label>
-        <Form.Control type="text" name="photoURL" placeholder="Enter email" />
+        <Form.Control type="text" name="photoURL" placeholder="Enter photoURL" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
@@ -66,20 +66,20 @@ const Register = () => {
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control type="password" name="password" placeholder="Password" />
+        <Form.Control type="password" name="password" placeholder="Enter Password" />
       </Form.Group>
       <p className='text-danger'><small>{error}</small></p>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
       <Form.Check
          type="checkbox"
          onClick={handleAccepted}
-         label={<>Accept <Link to='/terms'>Terms and conditions</Link></>}/>
+         label={<>Accept <Link to='/terms' className='text-decoration-none'>Terms and conditions</Link></>}/>
     
       </Form.Group>
       <Button className='me-5' variant="dark" type="submit" disabled={!accepted}>
         Register
       </Button>
-      <p className='mt-2'>Don't have an account? please <Link to='/login'>Login</Link></p>
+      <p className='mt-2'>Don't have an account? please <Link className='text-decoration-none' to='/login'>Login</Link></p>
     </Form>
  
     

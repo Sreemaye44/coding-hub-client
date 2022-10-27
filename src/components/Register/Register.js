@@ -10,6 +10,7 @@ import { AuthContext } from '../../Context/UserContext';
 const Register = () => {
   const{createUser,updateUserProfile}=useContext(AuthContext);
   const [error,setError]=useState(" ");
+  const [accepted, setAccepted]= useState(false);
   const handleSubmit=(event)=>
   {
     event.preventDefault();
@@ -43,6 +44,9 @@ const Register = () => {
     .then(()=>{})
     .catch(error=>console.error(error));
   }
+  const handleAccepted=event=>{
+    setAccepted(event.target.checked);
+}
     return (
         <div>
           <Form onSubmit={handleSubmit} className='border rounded m-3 mx-auto py-3 px-5 bg-warning' style={{width:'23rem'}}>
@@ -66,9 +70,13 @@ const Register = () => {
       </Form.Group>
       <p className='text-danger'><small>{error}</small></p>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Accept terms and conditions" />
+      <Form.Check
+         type="checkbox"
+         onClick={handleAccepted}
+         label={<>Accept <Link to='/terms'>Terms and conditions</Link></>}/>
+    
       </Form.Group>
-      <Button className='me-5' variant="dark" type="submit">
+      <Button className='me-5' variant="dark" type="submit" disabled={!accepted}>
         Register
       </Button>
       <p className='mt-2'>Don't have an account? please <Link to='/login'>Login</Link></p>

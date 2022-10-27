@@ -14,7 +14,7 @@ const Courses = () => {
                 courses.map(course=><Link to={`/details/${course.id}`}><Button className='m-2 w-75'  variant="outline-dark" size="md">{course.name}</Button></Link>)
             }
             </div>
-            <div className='m-1 w-100 mx-auto bg-warning bg-gradient p-4 row  row-cols-md-3 row-cols-sm-6 g-4 shadow-lg p-3 mb-5 rounded'>
+            <div className='m-1 w-100 mx-auto bg-light bg-gradient p-4 row  row-cols-md-3 row-cols-sm-6 g-4 shadow-lg p-3 mb-5 rounded'>
            
                 {
                     courses.map(course=>

@@ -24,7 +24,7 @@ const Header = () => {
   }
   
     return (
-        <Navbar className='p-0' collapseOnSelect expand="lg" bg="light" variant="light">
+        <Navbar className='p-0 mb-0' collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
       <Image style={{width: '30px', height: '25px'}} src='https://cdn.worldvectorlogo.com/logos/code-school.svg'></Image>
         <Link  className="text-decoration-none text-secondary fs-3" to='/'>CODING HUB</Link>

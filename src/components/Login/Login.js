@@ -9,6 +9,7 @@ import { AuthContext } from '../../Context/UserContext';
 
 const Login = () => {
   const {GoogleProviderLogin,logIn}=useContext(AuthContext);
+  const [error,setError]=useState(" ");
   const navigate=useNavigate();
   const location=useLocation();
   const from=location.state?.from?.pathname || '/';
@@ -23,11 +24,13 @@ const Login = () => {
     logIn(email, password)
     .then(result=>{
         const user=result.user;
+        setError('');
         form.reset();
         navigate(from, {replace: true});
     })
     .catch(error=>{
         console.error(error);
+        setError(error.message);
     });
   }
   const handleGoogleSignIn=(e)=>{
@@ -74,6 +77,7 @@ const Login = () => {
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" name="password" placeholder="Password" />
       </Form.Group>
+      <p className='text-danger'><small>{error}</small></p>
      
       <div className='d-flex justify-content-between'>
       <Button className='me-5' variant="dark" type="submit">

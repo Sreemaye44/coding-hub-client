@@ -3,12 +3,14 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { FaGoogle,FaGithub } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
+
 
 const Register = () => {
   const{createUser,updateUserProfile}=useContext(AuthContext);
+  const navigate=useNavigate();
   const [error,setError]=useState(" ");
   const [accepted, setAccepted]= useState(false);
   const handleSubmit=(event)=>
@@ -26,6 +28,8 @@ const Register = () => {
          form.reset();
          console.log(user)
          handleUpdateUserProfile(name,photoURL);
+         toast.success('Successfully Sign up!!');
+         navigate('/');
     
     })
     .catch((error)=>{
@@ -52,8 +56,8 @@ const Register = () => {
           <Form onSubmit={handleSubmit} className='border rounded m-3 mx-auto py-3 px-5 bg-warning' style={{width:'23rem'}}>
             <h4 className='text-center'>Sign Up Now!</h4>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Username</Form.Label>
-        <Form.Control type="text" name="name" placeholder="Enter username" />
+        <Form.Label>Full name</Form.Label>
+        <Form.Control type="text" name="name" placeholder="Enter fullname" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>PhotoURL</Form.Label>
